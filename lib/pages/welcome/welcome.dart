@@ -42,7 +42,7 @@ class _WelcomeState extends State<Welcome> {
                         title: "First See Learning",
                         subTitle:
                             "Forget about a for of paper all knowledge on one earning!",
-                        imagePath: "image path",
+                        imagePath: "assets/images/reading.png",
                       ),
                       _page(
                         index: 2,
@@ -51,7 +51,7 @@ class _WelcomeState extends State<Welcome> {
                         title: "Connect With Everyone",
                         subTitle:
                             "Always keep in touch with your tutor & friens.Let's get connected!",
-                        imagePath: "image path",
+                        imagePath: "assets/images/boy.png",
                       ),
                       _page(
                         index: 3,
@@ -60,7 +60,7 @@ class _WelcomeState extends State<Welcome> {
                         title: "Alwas Fasinated Learning",
                         subTitle:
                             "Anywhere,anytime.Time is at your discretion so study whenever you want",
-                        imagePath: "image path",
+                        imagePath: "assets/images/man.png",
                       ),
                     ],
                   ),
@@ -76,7 +76,7 @@ class _WelcomeState extends State<Welcome> {
                         color: Colors.grey,
                         activeColor: Colors.blue,
                         size: const Size.square(8.0),
-                        activeSize: const Size(10.0, 8.0),
+                        activeSize: const Size(18.0, 8.0),
                         activeShape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
@@ -104,9 +104,7 @@ class _WelcomeState extends State<Welcome> {
         SizedBox(
           width: 345.w,
           height: 345.w,
-          child: Text(
-            imagePath,
-          ),
+          child: Image.asset(imagePath),
         ),
         Container(
           child: Text(
