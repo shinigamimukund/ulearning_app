@@ -26,6 +26,9 @@ class _WelcomeState extends State<Welcome> {
                 alignment: Alignment.center,
                 children: [
                   PageView(
+                    onPageChanged: (index) {
+                      state.page = index;
+                    },
                     children: [
                       _page(
                         index: 1,
@@ -61,6 +64,8 @@ class _WelcomeState extends State<Welcome> {
 
                     ///`DotsIndicator` is package
                     child: DotsIndicator(
+                      ///this value state.page is updated from index of PageView
+                      position: state.page.toDouble(),
                       dotsCount: 3,
                       decorator: DotsDecorator(
                         color: Colors.grey,
