@@ -28,6 +28,11 @@ class _WelcomeState extends State<Welcome> {
                   PageView(
                     onPageChanged: (index) {
                       state.page = index;
+
+                      ///when the index is updated state.page in WelcomeState is updated
+                      ///because of this below line ie [BlocProvide]
+                      BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvent());
+                      print("index of PageView is ${state.page}");
                     },
                     children: [
                       _page(
