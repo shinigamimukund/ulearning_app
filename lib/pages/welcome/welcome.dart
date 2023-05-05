@@ -149,39 +149,39 @@ class _WelcomeState extends State<Welcome> {
               //jump to next page
             }
           },
+          child: Container(
+            width: 375.w,
+            height: 50.h,
+            margin: EdgeInsets.only(top: 100.h, left: 30.w, right: 30.w),
+
+            ///Style the Container with boxDecoration
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15.w),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  spreadRadius: 1,
+                  blurRadius: 2,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                buttonName,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+          ),
         ),
       ],
     );
   }
 }
-// Container(
-//           width: 375.w,
-//           height: 50.h,
-//           margin: EdgeInsets.only(top: 100.h, left: 30.w, right: 30.w),
-
-//           ///Style the Container with boxDecoration
-//           decoration: BoxDecoration(
-//             color: Colors.blue,
-//             borderRadius: BorderRadius.all(
-//               Radius.circular(15.w),
-//             ),
-//             boxShadow: [
-//               BoxShadow(
-//                 color: Colors.grey.withOpacity(0.3),
-//                 spreadRadius: 1,
-//                 blurRadius: 2,
-//                 offset: const Offset(0, 2),
-//               ),
-//             ],
-//           ),
-//           child: Center(
-//             child: Text(
-//               buttonName,
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontSize: 16.sp,
-//                 fontWeight: FontWeight.normal,
-//               ),
-//             ),
-//           ),
-//         ),
