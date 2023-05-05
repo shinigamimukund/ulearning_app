@@ -36,7 +36,7 @@ class _WelcomeState extends State<Welcome> {
                       ///when the index is updated state.page in WelcomeState is updated
                       ///because of this below line ie [BlocProvide]
                       BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvent());
-                      print("index of PageView is ${state.page}");
+                      //print("index of PageView is ${state.page}");
                     },
                     children: [
                       _page(
@@ -113,6 +113,7 @@ class _WelcomeState extends State<Welcome> {
             fit: BoxFit.cover,
           ),
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
           child: Text(
             title,
@@ -142,9 +143,11 @@ class _WelcomeState extends State<Welcome> {
             // within index 0-2
             if (index < 3) {
               //animation code
-              pageController.animateToPage(index,
-                  duration: const Duration(microseconds: 500),
-                  curve: Curves.decelerate);
+              pageController.animateToPage(
+                index,
+                duration: const Duration(milliseconds: 800),
+                curve: Curves.easeIn,
+              );
             } else {
               //jump to next page
             }

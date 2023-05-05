@@ -38,6 +38,9 @@ dependencies:
 
   # bloc state management
   flutter_bloc: ^8.1.2
+  bloc: ^8.1.1
+
+  meta: ^1.9.1
   # flutter_screenutil used in dynamic screen width and height also with font
   # used for dynamic screen
   flutter_screenutil: ^5.7.0

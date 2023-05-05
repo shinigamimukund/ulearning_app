@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unused_import
+
 import 'package:intl/intl.dart';
 
 class SyncMessageRequestEntity {
@@ -12,6 +14,7 @@ class SyncMessageRequestEntity {
 }
 
 class CallRequestEntity {
+  
   String? call_type;//1. voice 2. video
   String? to_token;
   String? to_name;
