@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/app_blocks.dart';
+import 'package:ulearning_app/app_states.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:ulearning_app/pages/welcome/welcome.dart';
 
@@ -16,13 +17,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ///Dependancy injection
     ///should be dont at the top level of the tree
-    return MultiBlocProvider(  //this is how we create Multi block Provider h
+    return MultiBlocProvider(
+      //this is how we create Multi block Provider
+      /**now we will use `lazy` to load the provider because
+       * always the `first` block is loaded `first` when the app starts so to
+       * avoid this we use `lazy` to load the `important` bloc
+       * [********Important**********]
+       * If `lazy` is `falsy` then that bloc loads first
+       * If `lazy` is `true`, that bloc loads `after` the bloc which are marked `lazy` as `false`
+      */
+      ///`lazy` is used tell which bloc is exicuted first
+      ///by default lazy is true
       providers: [
         BlocProvider(
-      create: (context) => WelcomeBloc(),
+          lazy:false,
+          create: (context) => WelcomeBloc(),
         ),
         BlocProvider(
-      create: (context) => AppBlocs(),
+          lazy:true,
+          create: (context) => AppBlocs(),
         ),
       ],
       child: ScreenUtilInit(
@@ -45,6 +58,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.white,
+      child:  Scaffold(
+        body: BlocBuilder<AppBlocs, AppState>(
+          builder: (context, state) {
+            return const Center(
+              child: Text(
+                "Hello",
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

@@ -1,4 +1,5 @@
 // these blocks are used to connect CLASSES of app_states.dart and app_events.dart
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ulearning_app/app_events.dart';
 import 'package:ulearning_app/app_states.dart';
@@ -17,7 +18,11 @@ class AppBlocs extends Bloc<AppEvent, AppState> {
   //AppBlocs(super.initialState);//WHY WAS INITIALSATE ONLY SELECTED
   //and
 
-  AppBlocs() : super(InitStates()) {//AppBlocs() constructor can redirect to InitState() constructor because
+  AppBlocs() : super(InitStates()) {
+    //AppBlocs() constructor can redirect to InitState() constructor because
+    if (kDebugMode) {
+      print('appBlock');
+    }
     // AppBlocs extends Bloc<AppEvent, AppState>......<AppEvent, AppState> are super classes for AppBloc() class
     //I think InitStates() is selected because of Bloc<......Event,AppState>
     //  appropriate states is bested because of Bloc<----,AppState>
@@ -33,7 +38,9 @@ class AppBlocs extends Bloc<AppEvent, AppState> {
 
       //VERY IMPORTANT line bloc operation of states
       //here state in state.counter+1 , is a getter method which gets and returns that value i.e counter
-      emit(AppState(counter: state.counter + 1));//******* this is how the states from the AppState() is accessed. eg login,increment etc,
+      emit(AppState(
+          counter: state.counter +
+              1)); //******* this is how the states from the AppState() is accessed. eg login,increment etc,
       //state.counter+1 is like i+1; or i++; which gets and then returns value
       //emit is a variableName of type Emitter, it can be any name like, em, emi, emmmi, etc.
       //state. retrieves current state of the counter and then
