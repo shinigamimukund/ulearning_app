@@ -141,7 +141,10 @@ class _WelcomeState extends State<Welcome> {
           onTap: () {
             // within index 0-2
             if (index < 3) {
-              //animation
+              //animation code
+              pageController.animateToPage(index,
+                  duration: const Duration(microseconds: 500),
+                  curve: Curves.decelerate);
             } else {
               //jump to next page
             }
