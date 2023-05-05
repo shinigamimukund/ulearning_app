@@ -29,6 +29,7 @@ class _WelcomeState extends State<Welcome> {
                 alignment: Alignment.center,
                 children: [
                   PageView(
+                    controller: pageController,
                     onPageChanged: (index) {
                       state.page = index;
 
