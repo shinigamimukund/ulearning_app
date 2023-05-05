@@ -12,6 +12,9 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  //adding page controller to navigate and animate
+  ///[PageController] a controller for [PageView]
+  PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -136,7 +139,7 @@ class _WelcomeState extends State<Welcome> {
         GestureDetector(
           onTap: () {
             // within index 0-2
-            if (index<3) {
+            if (index < 3) {
               //animation
             } else {
               //jump to next page
@@ -147,3 +150,34 @@ class _WelcomeState extends State<Welcome> {
     );
   }
 }
+// Container(
+//           width: 375.w,
+//           height: 50.h,
+//           margin: EdgeInsets.only(top: 100.h, left: 30.w, right: 30.w),
+
+//           ///Style the Container with boxDecoration
+//           decoration: BoxDecoration(
+//             color: Colors.blue,
+//             borderRadius: BorderRadius.all(
+//               Radius.circular(15.w),
+//             ),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.grey.withOpacity(0.3),
+//                 spreadRadius: 1,
+//                 blurRadius: 2,
+//                 offset: const Offset(0, 2),
+//               ),
+//             ],
+//           ),
+//           child: Center(
+//             child: Text(
+//               buttonName,
+//               style: TextStyle(
+//                 color: Colors.white,
+//                 fontSize: 16.sp,
+//                 fontWeight: FontWeight.normal,
+//               ),
+//             ),
+//           ),
+//         ),
