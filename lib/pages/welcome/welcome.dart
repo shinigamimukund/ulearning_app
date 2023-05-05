@@ -151,9 +151,15 @@ class _WelcomeState extends State<Welcome> {
                 curve: Curves.easeIn,
               );
             } else {
-              //jump to next page
+              ///jump to next page and also can more back to previous page
+              // Navigator.of(context)
+              //     .push(MaterialPageRoute(builder: (context) => const MyHomePage()));
+
+              ///below code is used to one way jump to another page
+              ///you cannot come back to previous page
+              ///we use routes to do this
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => const MyHomePage()));
+                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
             }
           },
           child: Container(

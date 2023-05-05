@@ -30,18 +30,21 @@ class MyApp extends StatelessWidget {
       ///by default lazy is true
       providers: [
         BlocProvider(
-          lazy:false,
+          lazy: false,
           create: (context) => WelcomeBloc(),
         ),
         BlocProvider(
-          lazy:true,
+          lazy: true,
           create: (context) => AppBlocs(),
         ),
       ],
       child: ScreenUtilInit(
-        builder: (context, child) => const MaterialApp(
+        builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Welcome(),
+          home: const Welcome(),
+          routes: {
+            "myHomePage": (context) => const MyHomePage(),
+          },
         ),
       ),
     );
@@ -60,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child:  Scaffold(
+      child: Scaffold(
         body: BlocBuilder<AppBlocs, AppState>(
           builder: (context, state) {
             return const Center(
