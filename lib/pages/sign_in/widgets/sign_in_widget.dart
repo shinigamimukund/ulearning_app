@@ -23,12 +23,36 @@ AppBar buildAppBar() {
     centerTitle: true,
   );
 }
+
 ///{@Start BuildContext}
 /// [BuildContext contex] is used in this method because
 /// `context` will be used for [Bloc]
 /// {@End BuildContext}
 Widget buildThirdPartyLogIn(BuildContext context) {
   return Container(
-   child: const Text("google"), 
+    child: Row(
+      children: [
+        _reusableLoginIcons("google"),
+        _reusableLoginIcons("apple"),
+        _reusableLoginIcons("facebook"),
+      ],
+    ),
+  );
+}
+
+///make function private, [_reusableLoginIcons], only if that
+///function is used in this file only
+Widget _reusableLoginIcons(String iconName) {
+  return GestureDetector(
+    onTap: () {},
+    child: SizedBox(
+      width: 40.h,
+      height: 40.h,
+      child: Image.asset(
+        ///iconName is recived from parameter
+        "assets/icons/$iconName.png",
+        fit: BoxFit.fill,
+      ),
+    ),
   );
 }
