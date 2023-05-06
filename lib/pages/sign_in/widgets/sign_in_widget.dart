@@ -96,14 +96,15 @@ Widget buidTextField(String text, String textType) {
     child: Row(
       children: [
         Container(
-          height: 15.h,
-          width: 15.w,
+          height: 16.h,
+          width: 16.w,
           margin: EdgeInsets.only(left: 16.w),
           child: Image.asset("assets/icons/user.png"),
         ),
         Container(
           width: 270.w,
           height: 50.h,
+          margin: EdgeInsets.only(top: 2.h), //custom mukund code
           child: TextField(
             ///keyboardType: TextInputType.multiine, was used in video
             keyboardType: TextInputType.emailAddress,
