@@ -30,7 +30,12 @@ AppBar buildAppBar() {
 /// {@End BuildContext}
 Widget buildThirdPartyLogIn(BuildContext context) {
   return Container(
+    margin: EdgeInsets.only(
+      top: 40.h,
+      bottom: 20.h,
+    ),
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _reusableLoginIcons("google"),
         _reusableLoginIcons("apple"),
@@ -52,6 +57,22 @@ Widget _reusableLoginIcons(String iconName) {
         ///iconName is recived from parameter
         "assets/icons/$iconName.png",
         fit: BoxFit.fill,
+      ),
+    ),
+  );
+}
+
+Widget reusableLableText(String lable) {
+  return Container(
+    margin: EdgeInsets.only(
+      bottom: 5.h,
+    ),
+    child: Text(
+      lable,
+      style: TextStyle(
+        color: Colors.grey.withOpacity(0.7),
+        fontWeight: FontWeight.normal,
+        fontSize: 16.sp,
       ),
     ),
   );

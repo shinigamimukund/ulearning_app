@@ -21,6 +21,7 @@ class _SignInState extends State<SignIn> {
             child: Column(
               children: [
                 buildThirdPartyLogIn(context),
+                reusableLableText("Or use your email account to login"),
               ],
             ),
           ),
