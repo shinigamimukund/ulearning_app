@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
+///this page is used to `seperate` widgets of `sign_in.dart`
 /// this is how we Seperate widgets into different files
 AppBar buildAppBar() {
   return AppBar(
@@ -21,5 +21,14 @@ AppBar buildAppBar() {
       ),
     ),
     centerTitle: true,
+  );
+}
+///{@Start BuildContext}
+/// [BuildContext contex] is used in this method because
+/// `context` will be used for [Bloc]
+/// {@End BuildContext}
+Widget buildThirdPartyLogIn(BuildContext context) {
+  return Container(
+   child: const Text("google"), 
   );
 }
