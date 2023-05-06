@@ -50,7 +50,7 @@ Widget buildThirdPartyLogIn(BuildContext context) {
 Widget _reusableLoginIcons(String iconName) {
   return GestureDetector(
     onTap: () {},
-    child: SizedBox(
+    child: Container(
       width: 40.h,
       height: 40.h,
       child: Image.asset(
@@ -74,6 +74,17 @@ Widget reusableLableText(String lable) {
         fontWeight: FontWeight.normal,
         fontSize: 14.sp,
       ),
+    ),
+  );
+}
+
+Widget buidTextField(String text, String textType) {
+  return Container(
+    width: 325.w,
+    height: 50.h,
+    color: Colors.red,
+    child: Text(
+      "hi",
     ),
   );
 }

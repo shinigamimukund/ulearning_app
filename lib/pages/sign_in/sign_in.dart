@@ -20,9 +20,13 @@ class _SignInState extends State<SignIn> {
           appBar: buildAppBar(),
           body: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildThirdPartyLogIn(context),
-                reusableLableText("Or use your email account to login"),
+                Center(
+                  child:
+                      reusableLableText("Or use your email account to login"),
+                ),
 
                 ///we are using [Container] here to apply `margin` after
                 ///the above text
@@ -30,11 +34,12 @@ class _SignInState extends State<SignIn> {
                 ///widgets or to group similar widgets because of `UI` or `use`.
                 Container(
                   margin: EdgeInsets.only(top: 66.h),
-                  alignment: Alignment.centerLeft,
                   padding: EdgeInsets.only(left: 25.w),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       reusableLableText("Email"),
+                      buidTextField("Email", "email"),
                     ],
                   ),
                 ),
