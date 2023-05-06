@@ -159,7 +159,7 @@ class _WelcomeState extends State<Welcome> {
               ///you cannot come back to previous page
               ///we use routes to do this
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
+                  .pushNamedAndRemoveUntil("signIn", (route) => false);
             }
           },
           child: Container(
