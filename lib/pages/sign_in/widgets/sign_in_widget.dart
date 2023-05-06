@@ -104,7 +104,39 @@ Widget buidTextField(String text, String textType) {
         Container(
           width: 270.w,
           height: 50.h,
-          child: TextField(),
+          child: const TextField(
+            ///keyboardType: TextInputType.multiine, was used in video
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              hintText: "Enter email address",
+
+              ///{@start default border removal}
+              ///all the below `border` is made `transparent` to `remove` the
+              ///`unnessessory default border`
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+
+              ///{@end default border removal}
+            ),
+          ),
         ),
       ],
     ),
