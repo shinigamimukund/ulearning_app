@@ -82,9 +82,31 @@ Widget buidTextField(String text, String textType) {
   return Container(
     width: 325.w,
     height: 50.h,
-    color: Colors.red,
-    child: Text(
-      "hi",
+    decoration: BoxDecoration(
+      color: Colors.red,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(
+          15,
+        ),
+      ),
+
+      ///border color
+      border: Border.all(color: Colors.black),
+    ),
+    child: Row(
+      children: [
+        Container(
+          height: 15.h,
+          width: 15.w,
+          margin: EdgeInsets.only(left: 16.w),
+          child: Image.asset("assets/icons/user.png"),
+        ),
+        Container(
+          width: 270.w,
+          height: 50.h,
+          child: TextField(),
+        ),
+      ],
     ),
   );
 }
