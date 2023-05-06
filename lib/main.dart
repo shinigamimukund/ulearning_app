@@ -42,11 +42,12 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
+
           ///this is how you setup `theme` for entire app
           ///it should we done in [MaterialApp]
           theme: ThemeData(
             appBarTheme: const AppBarTheme(
-              elevation: 0.3,
+              elevation: 0.7,
               backgroundColor: Colors.white,
             ),
           ),
