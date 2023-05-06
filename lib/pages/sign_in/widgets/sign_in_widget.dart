@@ -72,7 +72,7 @@ Widget reusableLableText(String lable) {
       style: TextStyle(
         color: Colors.grey.withOpacity(0.7),
         fontWeight: FontWeight.normal,
-        fontSize: 16.sp,
+        fontSize: 14.sp,
       ),
     ),
   );
