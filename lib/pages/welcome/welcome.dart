@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
 
-import '../../main.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
