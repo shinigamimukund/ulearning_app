@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/pages/sign_in/widgets/sign_in_widget.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -16,24 +16,7 @@ class _SignInState extends State<SignIn> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
-          appBar: AppBar(
-            ///this is how you add `custom` Shadow/Shadow Color and Elevation to [AppBar]
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0.3),
-              child: Container(
-                color: Colors.grey.withOpacity(0.5),
-              ),
-            ),
-            title: Text(
-              "Sign In",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            centerTitle: true,
-          ),
+          appBar: buildAppBar(),
         ),
       ),
     );
