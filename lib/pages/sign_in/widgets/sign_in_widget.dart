@@ -83,7 +83,7 @@ Widget buidTextField(String text, String textType) {
     width: 325.w,
     height: 50.h,
     decoration: BoxDecoration(
-      color: Colors.red,
+      color: Colors.white,
       borderRadius: const BorderRadius.all(
         Radius.circular(
           15,
@@ -104,7 +104,7 @@ Widget buidTextField(String text, String textType) {
         Container(
           width: 270.w,
           height: 50.h,
-          child: const TextField(
+          child: TextField(
             ///keyboardType: TextInputType.multiine, was used in video
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
@@ -113,28 +113,32 @@ Widget buidTextField(String text, String textType) {
               ///{@start default border removal}
               ///all the below `border` is made `transparent` to `remove` the
               ///`unnessessory default border`
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              disabledBorder: OutlineInputBorder(
+              disabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
 
               ///{@end default border removal}
+
+              hintStyle: TextStyle(
+                color: Colors.grey.withOpacity(0.5),
+              ),
             ),
           ),
         ),
