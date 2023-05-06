@@ -17,6 +17,13 @@ class _SignInState extends State<SignIn> {
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
+            ///this is how you add `custom` Shadow/Shadow Color and Elevation to [AppBar]
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(0.3),
+              child: Container(
+                color: Colors.grey.withOpacity(0.5),
+              ),
+            ),
             title: Text(
               "Sign In",
               style: TextStyle(
