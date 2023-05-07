@@ -66,6 +66,7 @@ Widget reusableLableText(String lable) {
   return Container(
     margin: EdgeInsets.only(
       bottom: 5.h,
+      top: 5.h,
     ),
     child: Text(
       lable,
@@ -78,10 +79,11 @@ Widget reusableLableText(String lable) {
   );
 }
 
-Widget buidTextField(String text, String textType) {
+Widget buidTextField(String textType, String hintText, String iconName) {
   return Container(
     width: 325.w,
     height: 50.h,
+    margin: EdgeInsets.only(bottom: 20.h),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: const BorderRadius.all(
@@ -99,7 +101,7 @@ Widget buidTextField(String text, String textType) {
           height: 16.h,
           width: 16.w,
           margin: EdgeInsets.only(left: 16.w),
-          child: Image.asset("assets/icons/user.png"),
+          child: Image.asset("assets/icons/$iconName.png"),
         ),
         Container(
           width: 270.w,
@@ -109,7 +111,7 @@ Widget buidTextField(String text, String textType) {
             ///keyboardType: TextInputType.multiine, was used in video
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              hintText: "Enter email address",
+              hintText: hintText,
 
               ///{@start default border removal}
               ///all the below `border` is made `transparent` to `remove` the
@@ -141,9 +143,38 @@ Widget buidTextField(String text, String textType) {
                 color: Colors.grey.withOpacity(0.5),
               ),
             ),
+            style: TextStyle(
+              fontSize: 14.sp,
+              fontFamily: "aviner",
+              fontWeight: FontWeight.normal,
+              color: Colors.black,
+            ),
+            autocorrect: false,
+
+            ///to hide pasword text
+            obscureText: textType == "Password" ? true : false,
           ),
         ),
       ],
+    ),
+  );
+}
+
+Widget forgotPassword() {
+  return Container(
+    width: 260.w,
+    height: 44.h,
+    child: GestureDetector(
+      onTap: () {},
+      child: Text(
+        "Forgot Password!",
+        style: TextStyle(
+          color: Colors.black,
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.blue,
+          fontSize: 14.sp,
+        ),
+      ),
     ),
   );
 }
