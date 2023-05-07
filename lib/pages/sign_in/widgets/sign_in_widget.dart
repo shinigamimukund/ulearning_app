@@ -152,7 +152,7 @@ Widget buidTextField(String textType, String hintText, String iconName) {
             autocorrect: false,
 
             ///to hide pasword text
-            obscureText: textType == "Password" ? true : false,
+            obscureText: textType == "password" ? true : false,
           ),
         ),
       ],
@@ -179,7 +179,7 @@ Widget forgotPassword() {
   );
 }
 
-Widget buttonForLoginAndReg(String text) {
+Widget buttonForLoginAndReg(String buttonType, String buttoName) {
   return GestureDetector(
     onTap: () {},
     child: Container(
@@ -187,19 +187,28 @@ Widget buttonForLoginAndReg(String text) {
       height: 50.h,
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: 20.h),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red,
+
         ///can also use [BorderRadius.cicular(15),]
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
+        boxShadow: [
+          BoxShadow(
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: const Offset(0, 1),
+            color: Colors.grey.withOpacity(0.8),
+          ),
+        ],
       ),
       child: Text(
-        text,
+        buttoName ,
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.normal,
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
     ),
