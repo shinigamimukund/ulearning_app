@@ -6,9 +6,12 @@ import 'package:ulearning_app/common/entities/values/colors.dart';
 /// this is how we Seperate widgets into different files
 AppBar buildAppBar() {
   return AppBar(
+    ///play with elevation and bottom to customize [AppBar] `shadow`
+    elevation: 0.2,
+
     ///this is how you add `custom` Shadow/Shadow Color and Elevation to [AppBar]
     bottom: PreferredSize(
-      preferredSize: const Size.fromHeight(1.0),
+      preferredSize: const Size.fromHeight(0.5),
       child: Container(
         color: AppColor.primarySecondaryBackground,
       ),
