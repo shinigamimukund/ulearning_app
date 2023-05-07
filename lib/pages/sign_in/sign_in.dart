@@ -25,12 +25,12 @@ class _SignInState extends State<SignIn> {
                 buildThirdPartyLogIn(context),
                 Center(
                   child:
-                      reusableLableText("Or use your email account to login"),
+                      reusableLabelText("Or use your email account to login"),
                 ),
 
                 ///we are using [Container] here to apply `margin` after
                 ///the above text
-                ///and we are using [Column] because to group/Seperate the Input related
+                ///and we are using [Column] because to group/Separate the Input related
                 ///widgets or to group similar widgets because of `UI` or `use`.
                 Container(
                   margin: EdgeInsets.only(top: 66.h),
@@ -38,14 +38,14 @@ class _SignInState extends State<SignIn> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      reusableLableText("Email"),
-                      buidTextField(
+                      reusableLabelText("Email"),
+                      buildTextField(
                         "email",
                         "Enter your email address",
                         "user",
                       ),
-                      reusableLableText("Password"),
-                      buidTextField(
+                      reusableLabelText("Password"),
+                      buildTextField(
                         "password",
                         "Enter your password",
                         "lock",

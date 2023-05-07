@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/common/entities/values/colors.dart';
 
-///this page is used to `seperate` widgets of `sign_in.dart`
+///this page is used to `separate` widgets of `sign_in.dart`
 /// this is how we Seperate widgets into different files
 AppBar buildAppBar() {
   return AppBar(
     ///this is how you add `custom` Shadow/Shadow Color and Elevation to [AppBar]
     bottom: PreferredSize(
-      preferredSize: const Size.fromHeight(0.3),
+      preferredSize: const Size.fromHeight(1.0),
       child: Container(
-        color: Colors.grey.withOpacity(0.5),
+        color: AppColor.primarySecondaryBackground,
       ),
     ),
     title: Text(
@@ -62,14 +63,14 @@ Widget _reusableLoginIcons(String iconName) {
   );
 }
 
-Widget reusableLableText(String lable) {
+Widget reusableLabelText(String label) {
   return Container(
     margin: EdgeInsets.only(
       bottom: 5.h,
       top: 5.h,
     ),
     child: Text(
-      lable,
+      label,
       style: TextStyle(
         color: Colors.grey.withOpacity(0.7),
         fontWeight: FontWeight.normal,
@@ -79,7 +80,7 @@ Widget reusableLableText(String lable) {
   );
 }
 
-Widget buidTextField(String textType, String hintText, String iconName) {
+Widget buildTextField(String textType, String hintText, String iconName) {
   return Container(
     width: 325.w,
     height: 50.h,
@@ -179,7 +180,7 @@ Widget forgotPassword() {
   );
 }
 
-Widget buttonForLoginAndReg(String buttonType, String buttoName) {
+Widget buttonForLoginAndReg(String buttonType, String buttonName) {
   return GestureDetector(
     onTap: () {},
     child: Container(
@@ -190,7 +191,7 @@ Widget buttonForLoginAndReg(String buttonType, String buttoName) {
       decoration: BoxDecoration(
         color: Colors.red,
 
-        ///can also use [BorderRadius.cicular(15),]
+        ///can also use [BorderRadius.circular(15),]
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
@@ -204,7 +205,7 @@ Widget buttonForLoginAndReg(String buttonType, String buttoName) {
         ],
       ),
       child: Text(
-        buttoName ,
+        buttonName,
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.normal,
