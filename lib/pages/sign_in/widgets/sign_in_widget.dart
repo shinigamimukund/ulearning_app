@@ -178,3 +178,30 @@ Widget forgotPassword() {
     ),
   );
 }
+
+Widget buttonForLoginAndReg(String text) {
+  return GestureDetector(
+    onTap: () {},
+    child: Container(
+      width: 325.w,
+      height: 50.h,
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(top: 20.h),
+      decoration: const BoxDecoration(
+        color: Colors.red,
+        ///can also use [BorderRadius.cicular(15),]
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.normal,
+          color: Colors.black,
+        ),
+      ),
+    ),
+  );
+}
