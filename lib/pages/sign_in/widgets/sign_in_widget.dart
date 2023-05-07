@@ -19,7 +19,7 @@ AppBar buildAppBar() {
     title: Text(
       "Sign In",
       style: TextStyle(
-        color: Colors.black,
+        color: AppColor.primaryText,
         fontSize: 16.sp,
         fontWeight: FontWeight.normal,
       ),
@@ -58,7 +58,7 @@ Widget _reusableLoginIcons(String iconName) {
       width: 40.h,
       height: 40.h,
       child: Image.asset(
-        ///iconName is recived from parameter
+        ///iconName is received from parameter
         "assets/icons/$iconName.png",
         fit: BoxFit.fill,
       ),
@@ -97,7 +97,7 @@ Widget buildTextField(String textType, String hintText, String iconName) {
       ),
 
       ///border color
-      border: Border.all(color: Colors.black),
+      border: Border.all(color: AppColor.primaryText),
     ),
     child: Row(
       children: [
@@ -151,7 +151,7 @@ Widget buildTextField(String textType, String hintText, String iconName) {
               fontSize: 14.sp,
               fontFamily: "aviner",
               fontWeight: FontWeight.normal,
-              color: Colors.black,
+              color: AppColor.primaryText,
             ),
             autocorrect: false,
 
@@ -192,7 +192,9 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: 20.h),
       decoration: BoxDecoration(
-        color: Colors.red,
+        color: buttonType == "login"
+            ? AppColor.primaryElement
+            : AppColor.primaryBackground,
 
         ///can also use [BorderRadius.circular(15),]
         borderRadius: const BorderRadius.all(
@@ -212,7 +214,9 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.normal,
-          color: Colors.white,
+          color: buttonType == "login"
+              ? AppColor.primaryBackground
+              : AppColor.primaryText,
         ),
       ),
     ),
