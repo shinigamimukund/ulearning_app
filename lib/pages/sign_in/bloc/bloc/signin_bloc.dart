@@ -6,9 +6,15 @@ part 'signin_event.dart';
 part 'signin_state.dart';
 
 class SigninBloc extends Bloc<SigninEvent, SigninState> {
-  SigninBloc() : super(SigninInitial()) {
+  ///super should be the class with Initial state
+  SigninBloc() : super(const SigninInitial()) {
     on<SigninEvent>((event, emit) {
-      // TODO: implement event handler
+      on<EmailEvent>((event, emit) {
+        // TODO: implement event handler
+      });
+      on<PasswordEvent>((event, emit) {
+        // TODO: implement event handler
+      });
     });
   }
 }
