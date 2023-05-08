@@ -9,21 +9,28 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
   ///super should be the class with Initial state
   SigninBloc() : super(const SigninInitial()) {
     on<SigninEvent>((event, emit) {
-      ///{@start event methods}
-      ///this is where we write [event handling code]
-      ///there are [2] methods here -
-      ///`on()` and `(event,emit){}` methods
-      ///`on()` method takes `(event,emit){}` as [parameter]
-      ///{@start event methods}
-      on<EmailEvent>((event, emit) {
-        ///-------we can write it like below also but,
-        ///-------we need to pass only email so
-        ///[emit(state.copyWith(email: state.email, password: state.password));]
-        emit(state.copyWith(email: state.email));
-      });
-      on<PasswordEvent>((event, emit) {
-        emit(state.copyWith(password: state.password));
-      });
+      ///-------emit state, for email and password event------old way
+      // on<EmailEvent>((event, emit) {
+      //   emit(state.copyWith(email: state.email));
+      // });
+      // on<PasswordEvent>((event, emit) {
+      //   emit(state.copyWith(password: state.password));
+      // });
+
+      ///separating [(event,emit)] from [on()]
+      ///below code replaces the above code---------new way
+      on<EmailEvent>(_emailEvent);
+      on<PasswordEvent>(_passwordEvent);
     });
+  }
+
+  ///emit for email event
+  void _emailEvent(SigninEvent event, Emitter<SigninState> emit) {
+    emit(state.copyWith(email: state.email));
+  }
+
+  ///emit for password event
+  void _passwordEvent(SigninEvent event, Emitter<SigninState> emit) {
+    emit(state.copyWith(password: state.password));
   }
 }
