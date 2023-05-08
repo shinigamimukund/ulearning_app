@@ -24,3 +24,4 @@ class SigninState {
 class SigninInitial extends SigninState {
   const SigninInitial() : super(email: "", password: "");
 }
+ 
