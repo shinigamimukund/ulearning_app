@@ -29,7 +29,7 @@ AppBar buildAppBar() {
 }
 
 ///{@Start BuildContext}
-/// [BuildContext contex] is used in this method because
+/// [BuildContext context] is used in this method because
 /// `context` will be used for [Bloc]
 /// {@End BuildContext}
 Widget buildThirdPartyLogIn(BuildContext context) {
@@ -112,14 +112,14 @@ Widget buildTextField(String textType, String hintText, String iconName) {
           height: 50.h,
           margin: EdgeInsets.only(top: 2.h), //custom mukund code
           child: TextField(
-            ///keyboardType: TextInputType.multiine, was used in video
+            ///keyboardType: TextInputType.multiline, was used in video
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               hintText: hintText,
 
               ///{@start default border removal}
               ///all the below `border` is made `transparent` to `remove` the
-              ///`unnessessory default border`
+              ///`unnecessary default border`
               border: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
@@ -155,7 +155,7 @@ Widget buildTextField(String textType, String hintText, String iconName) {
             ),
             autocorrect: false,
 
-            ///to hide pasword text
+            ///to hide pass word text
             obscureText: textType == "password" ? true : false,
           ),
         ),
@@ -192,6 +192,7 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: 20.h),
       decoration: BoxDecoration(
+        ///condition check for button color
         color: buttonType == "login"
             ? AppColor.primaryElement
             : AppColor.primaryBackground,
@@ -214,6 +215,8 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.normal,
+
+          ///condition check for button text color
           color: buttonType == "login"
               ? AppColor.primaryBackground
               : AppColor.primaryText,

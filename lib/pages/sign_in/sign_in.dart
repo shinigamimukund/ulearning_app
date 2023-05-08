@@ -33,7 +33,7 @@ class _SignInState extends State<SignIn> {
                 ///and we are using [Column] because to group/Separate the Input related
                 ///widgets or to group similar widgets because of `UI` or `use`.
                 Container(
-                  margin: EdgeInsets.only(top: 66.h),
+                  margin: EdgeInsets.only(top: 40.h),
                   padding: EdgeInsets.only(left: 25.w, right: 25.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,8 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/common/entities/values/colors.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
-
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -19,7 +19,7 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: AppColor.primaryBackground,
       child: Scaffold(
         body: BlocBuilder<WelcomeBloc, WelcomeState>(
           builder: (context, state) {
@@ -55,14 +55,14 @@ class _WelcomeState extends State<Welcome> {
                         buttonName: "Next",
                         title: "Connect With Everyone",
                         subTitle:
-                            "Always keep in touch with your tutor & friens.Let's get connected!",
+                            "Always keep in touch with your tutor & friend.Let's get connected!",
                         imagePath: "assets/images/boy.png",
                       ),
                       _page(
                         index: 3,
                         contextRes: context,
                         buttonName: "Get Started",
-                        title: "Alwas Fasinated Learning",
+                        title: "Always Fascinated Learning",
                         subTitle:
                             "Anywhere,anytime.Time is at your discretion so study whenever you want",
                         imagePath: "assets/images/man.png",
@@ -78,8 +78,8 @@ class _WelcomeState extends State<Welcome> {
                       position: state.page.toDouble(),
                       dotsCount: 3,
                       decorator: DotsDecorator(
-                        color: Colors.grey,
-                        activeColor: Colors.blue,
+                        color: AppColor.primaryThreeElementText,
+                        activeColor: AppColor.primaryElement,
                         size: const Size.square(8.0),
                         activeSize: const Size(18.0, 8.0),
                         activeShape: RoundedRectangleBorder(
@@ -119,7 +119,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColor.primaryText,
               fontSize: 24.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -131,7 +131,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             subTitle,
             style: TextStyle(
-              color: Colors.black.withOpacity(0.5),
+              color: AppColor.primarySecondaryElementText,
               fontSize: 14.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -168,16 +168,16 @@ class _WelcomeState extends State<Welcome> {
 
             ///Style the Container with boxDecoration
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColor.primaryElement,
               borderRadius: BorderRadius.all(
                 Radius.circular(15.w),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
+                  color: AppColor.primaryThreeElementText.withOpacity(0.5),
                   spreadRadius: 1,
                   blurRadius: 2,
-                  offset: const Offset(0, 2),
+                  offset: const Offset(0, 1),
                 ),
               ],
             ),
@@ -185,7 +185,7 @@ class _WelcomeState extends State<Welcome> {
               child: Text(
                 buttonName,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColor.primaryBackground,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.normal,
                 ),
