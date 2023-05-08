@@ -168,6 +168,7 @@ Widget forgotPassword() {
   return Container(
     width: 260.w,
     height: 44.h,
+    margin: EdgeInsets.only(bottom: 40.h),
     child: GestureDetector(
       onTap: () {},
       child: Text(
@@ -188,7 +189,7 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
     onTap: () {},
     child: Container(
       width: 325.w,
-      height: 50.h,
+      height: 40.h,
       alignment: Alignment.center,
       margin: EdgeInsets.only(top: 20.h),
       decoration: BoxDecoration(
@@ -205,7 +206,7 @@ Widget buttonForLoginAndReg(String buttonType, String buttonName) {
           BoxShadow(
             spreadRadius: 1,
             blurRadius: 2,
-            offset: const Offset(0, 1),
+            offset: const Offset(1, 1),
             color: Colors.grey.withOpacity(0.8),
           ),
         ],
