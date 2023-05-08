@@ -9,12 +9,19 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
   ///super should be the class with Initial state
   SigninBloc() : super(const SigninInitial()) {
     on<SigninEvent>((event, emit) {
+
+      ///{@start event methods}
+      ///this is where we write [event handling code]
+      ///there are [2] methods here -
+      ///`on()` and `(event,emit){}` methods
+      ///`on()` method takes `(event,emit){}` as [parameter]
       on<EmailEvent>((event, emit) {
         // TODO: implement event handler
       });
       on<PasswordEvent>((event, emit) {
         // TODO: implement event handler
-      });
+      }); 
+      ///{@start event methods}
     });
   }
 }
