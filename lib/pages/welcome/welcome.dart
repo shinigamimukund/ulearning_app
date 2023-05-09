@@ -146,7 +146,7 @@ class _WelcomeState extends State<Welcome> {
               //animation code
               pageController.animateToPage(
                 index,
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 200),
                 curve: Curves.easeIn,
               );
             } else {
