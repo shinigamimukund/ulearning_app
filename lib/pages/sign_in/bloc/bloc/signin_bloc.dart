@@ -29,8 +29,10 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
     emit(state.copyWith(email: state.email));
   }
 
-  ///emit for password event
-  void _passwordEvent(PasswordEvent event, Emitter<SigninState> emit) {
-    emit(state.copyWith(password: state.password));
+  ///`emit` for password event
+  ///`emit` can be any name as shown below
+  void _passwordEvent(PasswordEvent event, Emitter<SigninState> emitCustomName) {
+    ///`emitCustomName` is user defined
+    emitCustomName(state.copyWith(password: state.password));
   }
 }
