@@ -13,6 +13,16 @@ class SignInController {
         ///we can also `retrieve state value` like this----below code
         ///[BlocProvider.of<SigninBloc>(context).state;]
         final state = context.read<SigninBloc>().state;
+
+        String? emailAddress = state.email;
+        String? password = state.password;
+
+        if (emailAddress!.isEmpty) {
+          //using package to handle verification
+        }
+        if (password!.isEmpty) {
+          //using package to handle verification
+        }
       }
     } catch (e) {
       //add catch block
