@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ///Dependancy injection
-    ///should be dont at the top level of the tree
+    ///Dependency injection
+    ///should be do'nt at the top level of the tree
     return MultiBlocProvider(
       //this is how we create Multi block Provider
       /**now we will use `lazy` to load the provider because
