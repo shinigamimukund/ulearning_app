@@ -15,10 +15,10 @@ class SignInController {
         ///to `read` the `state` value from [SigninBloc]
         ///we can also `retrieve state value` like this----below code
         ///[BlocProvider.of<SigninBloc>(context).state;]
-        final state = context.read<SigninBloc>().state;
+        final userEnteredCredentials = context.read<SigninBloc>().state;
 
-        String? emailAddress = state.email;
-        String? password = state.password;
+        String? emailAddress = userEnteredCredentials.email;
+        String? password = userEnteredCredentials.password;
 
         if (emailAddress!.isEmpty) {
           //using package to handle verification
@@ -27,9 +27,21 @@ class SignInController {
           //using package to handle verification
         }
         try {
-          final credentials = await FirebaseAuth.instance
+          final firebaseCredentials = await FirebaseAuth.instance
               .signInWithEmailAndPassword(
                   email: emailAddress, password: password);
+
+          if (firebaseCredentials.user == null) {
+            //
+          }
+
+          ///`user!`.......(null assertion operator)
+          //////meaning it will dart that user? which is nullable type
+          //////that `user!` is not null
+          ///`!credentials`..... (boolean operator `NOT`)
+          if (!firebaseCredentials.user!.emailVerified) {
+            //
+          }
         } catch (e) {
           //
         }
