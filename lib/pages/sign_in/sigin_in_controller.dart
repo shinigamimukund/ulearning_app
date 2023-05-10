@@ -27,6 +27,10 @@ class SignInController {
           //using package to handle verification
         }
         try {
+          /// 1) to use firebaseAuth for all types like email,google,facebook etc
+          ///     [FirebaseAuth.instance] is default after that
+          ///     different method is used for different purpose
+          ///     here we use [.signInWithEmailAndPassword()] for `email` and `password`
           final firebaseCredentials = await FirebaseAuth.instance
               .signInWithEmailAndPassword(
                   email: emailAddress, password: password);
@@ -40,6 +44,13 @@ class SignInController {
           //////that `user!` is not null
           ///`!credentials`..... (boolean operator `NOT`)
           if (!firebaseCredentials.user!.emailVerified) {
+            //
+          }
+
+          var user = firebaseCredentials.user;
+          if (user != null) {
+            //
+          } else {
             //
           }
         } catch (e) {
