@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732318786831",
+    "project_id": "ulearning-app-fb",
+    "storage_bucket": "ulearning-app-fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732318786831:android:59fd6d1789b526882f4a7a",
+        "android_client_info": {
+          "package_name": "com.mukund.ulearning_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732318786831-k02sbe6bjcm0r0nk96lhujrac6aqotbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZJmSW8kzTKs5mjuPnJtA8aXCoX8x9M00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732318786831-k02sbe6bjcm0r0nk96lhujrac6aqotbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
