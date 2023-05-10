@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
 
 ///this page is used to `separate` widgets of `sign_in.dart`
-/// this is how we Seperate widgets into different files
+/// this is how we Separate widgets into different files
 AppBar buildAppBar() {
   return AppBar(
     ///play with elevation and bottom to customize [AppBar] `shadow`
@@ -54,7 +54,7 @@ Widget buildThirdPartyLogIn(BuildContext context) {
 Widget _reusableLoginIcons(String iconName) {
   return GestureDetector(
     onTap: () {},
-    child: Container(
+    child: SizedBox(
       width: 40.h,
       height: 40.h,
       child: Image.asset(
