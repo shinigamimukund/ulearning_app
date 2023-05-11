@@ -60,6 +60,8 @@ class SignInController {
           } else if (e.code == 'wrong-password') {
             print("wrong password provided for the user");
             //toastInfo(msg: "wrong password provided for the user");
+          } else if (e.code == 'invalid-email') {
+            print("your email format is incorrect");
           }
         }
       }
