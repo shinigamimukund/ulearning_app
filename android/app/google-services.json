@@ -29,6 +29,13 @@
             {
               "client_id": "732318786831-k02sbe6bjcm0r0nk96lhujrac6aqotbs.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "732318786831-c3ls1vin5p6p507qthli8p4fb3l64fto.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mukund.ulearningApp"
+              }
             }
           ]
         }

@@ -49,12 +49,18 @@ class SignInController {
 
           var user = firebaseCredentials.user;
           if (user != null) {
-            //
+            print("user exists");
           } else {
-            //
+            print("user does'nt exists");
           }
-        } catch (e) {
-          //
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-found') {
+            print("No user found for that email");
+            //toastInfo(msg: "No user found for that email");
+          } else if (e.code == 'wrong-password') {
+            print("wrong password provided for the user");
+            //toastInfo(msg: "wrong password provided for the user");
+          }
         }
       }
     } catch (e) {
