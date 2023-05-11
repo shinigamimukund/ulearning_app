@@ -117,6 +117,11 @@ Widget buildTextField(
           height: 50.h,
           margin: EdgeInsets.only(top: 2.h), //custom mukund code
           child: TextField(
+            /**   usually this is how we pass value for onChanged or onTap
+             * [context.read<SigninBloc>().add(PasswordEvent(value));]
+             *    since we are making our code DYNAMIC, we are passing it as function 
+             *    as shown below
+             */
             onChanged: (value) => funValue(value),
             ///keyboardType: TextInputType.multiline, was used in video
             keyboardType: TextInputType.emailAddress,
