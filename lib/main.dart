@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/app_blocks.dart';
 import 'package:ulearning_app/app_states.dart';
+import 'package:ulearning_app/pages/sign_in/bloc/bloc/signin_bloc.dart';
 import 'package:ulearning_app/pages/sign_in/sign_in.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:ulearning_app/pages/welcome/welcome.dart';
@@ -35,14 +36,9 @@ class MyApp extends StatelessWidget {
       ///`lazy` is used tell which bloc is exicuted first
       ///by default lazy is true
       providers: [
-        BlocProvider(
-          lazy: false,
-          create: (context) => WelcomeBloc(),
-        ),
-        BlocProvider(
-          lazy: true,
-          create: (context) => AppBlocs(),
-        ),
+        BlocProvider(lazy: false, create: (context) => WelcomeBloc()),
+        BlocProvider(lazy: true, create: (context) => AppBlocs()),
+        BlocProvider(create: (context) => SigninBloc()),
       ],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
