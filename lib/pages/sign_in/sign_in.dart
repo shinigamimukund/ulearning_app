@@ -48,12 +48,20 @@ class _SignInState extends State<SignIn> {
                             "email",
                             "Enter your email address",
                             "user",
+                            (value) {
+                              context.read<SigninBloc>().add(EmailEvent(value));
+                            },
                           ),
                           reusableLabelText("Password"),
                           buildTextField(
                             "password",
                             "Enter your password",
                             "lock",
+                            (value) {
+                              context
+                                  .read<SigninBloc>()
+                                  .add(PasswordEvent(value));
+                            },
                           ),
                           forgotPassword(),
                           buttonForLoginAndReg("register", "Register "),

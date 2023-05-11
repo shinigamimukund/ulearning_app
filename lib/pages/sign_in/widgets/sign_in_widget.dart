@@ -83,7 +83,12 @@ Widget reusableLabelText(String label) {
   );
 }
 
-Widget buildTextField(String textType, String hintText, String iconName) {
+Widget buildTextField(
+  String textType,
+  String hintText,
+  String iconName,
+  void Function(dynamic value) funValue,
+) {
   return Container(
     width: 325.w,
     height: 50.h,
@@ -112,6 +117,7 @@ Widget buildTextField(String textType, String hintText, String iconName) {
           height: 50.h,
           margin: EdgeInsets.only(top: 2.h), //custom mukund code
           child: TextField(
+            onChanged: (value) => funValue(value),
             ///keyboardType: TextInputType.multiline, was used in video
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
