@@ -87,7 +87,7 @@ Widget buildTextField(
   String textType,
   String hintText,
   String iconName,
-  void Function(dynamic value) funValue,
+  void Function(dynamic value)? funValue,
 ) {
   return Container(
     width: 325.w,
@@ -122,7 +122,8 @@ Widget buildTextField(
              *    since we are making our code DYNAMIC, we are passing it as function 
              *    as shown below
              */
-            onChanged: (value) => funValue(value),
+            onChanged: (value) => funValue!(value),
+
             ///keyboardType: TextInputType.multiline, was used in video
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
