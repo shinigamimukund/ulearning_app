@@ -79,10 +79,11 @@ class _SignInState extends State<SignIn> {
                             "register",
                             "Register ",
                             () {
+                              Navigator.of(context).pushNamed("register");
                               print("Registration button");
                             },
                           ),
-                          
+
                           // SizedBox(height: 20.h),
                         ],
                       ),
