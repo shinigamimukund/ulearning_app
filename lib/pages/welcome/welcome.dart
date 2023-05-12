@@ -75,7 +75,7 @@ class _WelcomeState extends State<Welcome> {
                     ///`DotsIndicator` is package
                     child: DotsIndicator(
                       ///this value state.page is updated from index of PageView
-                      position: state.page.toDouble(),
+                      position: state.page,
                       dotsCount: 3,
                       decorator: DotsDecorator(
                         color: AppColor.primaryThreeElementText,

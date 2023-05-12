@@ -1,7 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ulearning_app/pages/sign_in/bloc/bloc/signin_bloc.dart';
+import 'package:ulearning_app/widgets/flutter_toast.dart';
 
 /// this where we compare user input and firebase data
 /// this is where we authenticate login(or other data)
@@ -22,9 +26,11 @@ class SignInController {
 
         if (emailAddress!.isEmpty) {
           //using package to handle verification
+          toastInfo(message: "user field empty");
         }
         if (password!.isEmpty) {
           //using package to handle verification
+          toastInfo(message: "password field empty");
         }
         try {
           /// 1) to use firebaseAuth for all types like email,google,facebook etc
@@ -49,19 +55,17 @@ class SignInController {
 
           var user = firebaseCredentials.user;
           if (user != null) {
-            print("user exists");
+            toastInfo(message: "user exists");
           } else {
-            print("user does'nt exists");
+            toastInfo(message: "user does'nt exists");
           }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {
-            print("No user found for that email");
-            //toastInfo(msg: "No user found for that email");
+            toastInfo(message: "No user found for that email");
           } else if (e.code == 'wrong-password') {
-            print("wrong password provided for the user");
-            //toastInfo(msg: "wrong password provided for the user");
+            toastInfo(message: "wrong password provided for the user");
           } else if (e.code == 'invalid-email') {
-            print("your email format is incorrect");
+            toastInfo(message: "your email format is incorrect");
           }
         }
       }
