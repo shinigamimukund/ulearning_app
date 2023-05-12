@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:ulearning_app/pages/sign_in/widgets/sign_in_widget.dart';
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  const Register({super.key});
 
   @override
-  _RegisterState createState() => _RegisterState();
+  State<Register> createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.white,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: buildAppBar("Register"),
+        body: SafeArea(
+          child: Container(),
+        ),
+      ),
+    );
   }
 }

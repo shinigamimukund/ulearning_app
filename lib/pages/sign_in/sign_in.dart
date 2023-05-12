@@ -23,7 +23,7 @@ class _SignInState extends State<SignIn> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: Colors.white,
-              appBar: buildAppBar(),
+              appBar: buildAppBar("Sign In"),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

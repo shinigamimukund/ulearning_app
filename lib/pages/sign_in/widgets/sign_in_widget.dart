@@ -4,7 +4,7 @@ import 'package:ulearning_app/common/entities/values/colors.dart';
 
 ///this page is used to `separate` widgets of `sign_in.dart`
 /// this is how we Separate widgets into different files
-AppBar buildAppBar() {
+AppBar buildAppBar(String title) {
   return AppBar(
     ///play with elevation and bottom to customize [AppBar] `shadow`
     elevation: 0.2,
@@ -17,7 +17,7 @@ AppBar buildAppBar() {
       ),
     ),
     title: Text(
-      "Sign In",
+      title,
       style: TextStyle(
         color: AppColor.primaryText,
         fontSize: 16.sp,
