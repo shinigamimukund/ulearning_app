@@ -64,8 +64,21 @@ class _SignInState extends State<SignIn> {
                             },
                           ),
                           forgotPassword(),
-                          buttonForLoginAndReg("register", "Register "),
-                          buttonForLoginAndReg("login", "Log In"),
+
+                          buttonForLoginAndReg(
+                            "login",
+                            "Log In",
+                            () {
+                              print("login button ");
+                            },
+                          ),
+                          buttonForLoginAndReg(
+                            "register",
+                            "Register ",
+                            () {
+                              print("Registration button");
+                            },
+                          ),
                           // SizedBox(height: 20.h),
                         ],
                       ),

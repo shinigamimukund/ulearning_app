@@ -196,9 +196,14 @@ Widget forgotPassword() {
   );
 }
 
-Widget buttonForLoginAndReg(String buttonType, String buttonName, void Function()? buttonFunction) {
+Widget buttonForLoginAndReg(
+    String buttonType, String buttonName, void Function()? buttonFunction) {
   return GestureDetector(
-    onTap: ()=> buttonFunction,
+    ///since we are already passing a function no nee to write as below
+    ///[onTap: () => buttonFunction,]
+    ///just write like this,below
+    ///`onTap` takes function
+    onTap: buttonFunction,
     child: Container(
       width: 325.w,
       height: 40.h,
