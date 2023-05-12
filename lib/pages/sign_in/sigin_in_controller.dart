@@ -27,10 +27,12 @@ class SignInController {
         if (emailAddress!.isEmpty) {
           //using package to handle verification
           toastInfo(message: "user field empty");
+          return;
         }
         if (password!.isEmpty) {
           //using package to handle verification
           toastInfo(message: "password field empty");
+          return;
         }
         try {
           /// 1) to use firebaseAuth for all types like email,google,facebook etc
@@ -56,8 +58,10 @@ class SignInController {
           var user = firebaseCredentials.user;
           if (user != null) {
             toastInfo(message: "user exists");
+            return;
           } else {
             toastInfo(message: "user does'nt exists");
+            return;
           }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {
