@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/common/entities/values/colors.dart';
 import 'package:ulearning_app/pages/bloc_providers.dart';
 import 'package:ulearning_app/pages/register/register.dart';
 import 'package:ulearning_app/pages/sign_in/sign_in.dart';
@@ -33,8 +34,12 @@ class MyApp extends StatelessWidget {
           ///this is how you setup `theme` for entire app
           ///it should we done in [MaterialApp]
           theme: ThemeData(
+            
             appBarTheme: const AppBarTheme(
               elevation: 0.7,
+              iconTheme:  IconThemeData(
+                color: AppColor.primaryText,
+              ),
               backgroundColor: Colors.white,
             ),
           ),
