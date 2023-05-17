@@ -34,10 +34,11 @@ class MyApp extends StatelessWidget {
           ///this is how you setup `theme` for entire app
           ///it should we done in [MaterialApp]
           theme: ThemeData(
-            
             appBarTheme: const AppBarTheme(
               elevation: 0.7,
-              iconTheme:  IconThemeData(
+
+              ///back Arrow color black because of this iconTheme
+              iconTheme: IconThemeData(
                 color: AppColor.primaryText,
               ),
               backgroundColor: Colors.white,

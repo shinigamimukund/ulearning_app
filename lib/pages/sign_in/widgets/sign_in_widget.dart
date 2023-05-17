@@ -91,7 +91,7 @@ Widget buildTextField(
 ) {
   return Container(
     width: 325.w,
-    height: 50.h,
+    height: 40.h,
     margin: EdgeInsets.only(bottom: 20.h),
     decoration: BoxDecoration(
       color: Colors.white,

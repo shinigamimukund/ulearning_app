@@ -3,17 +3,22 @@ part of 'register_bloc.dart';
 @immutable
 abstract class RegisterEvent {}
 
-class RegisterUserNameEvent extends RegisterEvent {
+class UserNameEvent extends RegisterEvent {
   final String username;
-  RegisterUserNameEvent(this.username);
+  UserNameEvent(this.username);
 }
 
-class RegisterEmailEvent extends RegisterEvent {
+class EmailEvent extends RegisterEvent {
   final String email;
-  RegisterEmailEvent(this.email);
+  EmailEvent(this.email);
 }
 
-class RegisterPasswordEvent extends RegisterEvent {
+class PasswordEvent extends RegisterEvent {
   final String password;
-  RegisterPasswordEvent(this.password);
+  PasswordEvent(this.password);
+}
+
+class RePasswordEvent extends RegisterEvent {
+  final String rePassword;
+  RePasswordEvent(this.rePassword);
 }
