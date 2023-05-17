@@ -47,7 +47,9 @@ class _RegisterState extends State<Register> {
                             "Enter your user name",
                             "user",
                             (value) {
-                              //context.read<SigninBloc>().add(EmailEvent(value));
+                              context
+                                  .read<RegisterBloc>()
+                                  .add(UserNameEvent(value));
                             },
                           ),
                           reusableLabelText("Email"),
@@ -56,7 +58,9 @@ class _RegisterState extends State<Register> {
                             "Enter your email address",
                             "user",
                             (value) {
-                              //context.read<SigninBloc>().add(EmailEvent(value));
+                              context
+                                  .read<RegisterBloc>()
+                                  .add(EmailEvent(value));
                             },
                           ),
                           reusableLabelText("Password"),
@@ -65,16 +69,20 @@ class _RegisterState extends State<Register> {
                             "Enter your password",
                             "lock",
                             (value) {
-                              //context.read<SigninBloc>().add(PasswordEvent(value));
+                              context
+                                  .read<RegisterBloc>()
+                                  .add(PasswordEvent(value));
                             },
                           ),
                           reusableLabelText("Confirm Password"),
                           buildTextField(
                             "confirm_password",
-                            "Enter your Confirm password",
+                            "Re-Enter your password",
                             "lock",
                             (value) {
-                              //context.read<SigninBloc>().add(PasswordEvent(value));
+                              context
+                                  .read<RegisterBloc>()
+                                  .add(RePasswordEvent(value));
                             },
                           ),
                           reusableLabelText(
