@@ -24,8 +24,6 @@ class MyApp extends StatelessWidget {
     ///Dependency injection
     ///should be do'nt at the top level of the tree
     return MultiBlocProvider(
-      //this is how we create Multi block Provider
-
       providers: AppBlocProviders.allBlocProviders,
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(

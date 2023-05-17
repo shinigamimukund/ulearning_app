@@ -72,7 +72,6 @@ class _SignInState extends State<SignIn> {
                             () {
                               SignInController(context: context)
                                   .handleSignIn("email");
-                              print("login button ");
                             },
                           ),
                           buttonForLoginAndReg(
@@ -80,7 +79,6 @@ class _SignInState extends State<SignIn> {
                             "Register ",
                             () {
                               Navigator.of(context).pushNamed("register");
-                              print("Registration button");
                             },
                           ),
 
