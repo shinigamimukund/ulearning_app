@@ -6,8 +6,41 @@ part 'register_state.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc() : super(const RegisterState()) {
-    on<RegisterEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    ///`separating` on method by replacing[(event,emit){}] method with
+    ///[_userNameEvent] method
+    ///default on method
+    /// [on<UserNameEvent>((event, emit){});]
+
+    ///userName Bloc
+    on<UserNameEvent>(_userNameEvent);
+
+    ///userName Bloc
+    on<EmailEvent>(_emailEvent);
+
+    ///userName Bloc
+    on<PasswordEvent>(_passwordEvent);
+
+    ///userName Bloc
+    on<RePasswordEvent>(_rePasswordEvent);
+  }
+
+  ///userName Bloc
+  void _userNameEvent(UserNameEvent event, Emitter<RegisterState> emit) {
+    emit(state.copyWith(userName: event.userName));
+  }
+
+  ///userName Bloc
+  void _emailEvent(EmailEvent event, Emitter<RegisterState> emit) {
+    emit(state.copyWith(email: event.email));
+  }
+
+  ///userName Bloc
+  void _passwordEvent(PasswordEvent event, Emitter<RegisterState> emit) {
+    emit(state.copyWith(password: event.password));
+  }
+
+  ///userName Bloc
+  void _rePasswordEvent(RePasswordEvent event, Emitter<RegisterState> emit) {
+    emit(state.copyWith(rePassword: event.rePassword));
   }
 }

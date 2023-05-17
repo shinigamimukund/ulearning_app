@@ -1,24 +1,26 @@
 part of 'register_bloc.dart';
 
 @immutable
-abstract class RegisterEvent {}
+abstract class RegisterEvent {
+  const RegisterEvent();
+}
 
 class UserNameEvent extends RegisterEvent {
-  final String username;
-  UserNameEvent(this.username);
+  final String userName;
+  const UserNameEvent(this.userName);
 }
 
 class EmailEvent extends RegisterEvent {
   final String email;
-  EmailEvent(this.email);
+  const EmailEvent(this.email);
 }
 
 class PasswordEvent extends RegisterEvent {
   final String password;
-  PasswordEvent(this.password);
+  const PasswordEvent(this.password);
 }
 
 class RePasswordEvent extends RegisterEvent {
   final String rePassword;
-  RePasswordEvent(this.rePassword);
+  const RePasswordEvent(this.rePassword);
 }
