@@ -43,6 +43,14 @@ class _ApplicationPageState extends State<ApplicationPage> {
                   height: 15.h,
                   child: Image.asset("assets/icons/home.png"),
                 ),
+                activeIcon: SizedBox(
+                  width: 15.w,
+                  height: 15.h,
+                  child: Image.asset(
+                    "assets/icons/home.png",
+                    color: AppColor.primaryElement,
+                  ),
+                ),
               ),
               BottomNavigationBarItem(
                 label: "Search",
@@ -51,13 +59,29 @@ class _ApplicationPageState extends State<ApplicationPage> {
                   height: 15.h,
                   child: Image.asset("assets/icons/search.png"),
                 ),
+                activeIcon: SizedBox(
+                  width: 15.w,
+                  height: 15.h,
+                  child: Image.asset(
+                    "assets/icons/search2.png",
+                    color: AppColor.primaryElement,
+                  ),
+                ),
               ),
               BottomNavigationBarItem(
                 label: "Course",
                 icon: SizedBox(
                   width: 15.w,
                   height: 15.h,
-                  child: Image.asset("assets/icons/search.png"),
+                  child: Image.asset("assets/icons/play-circle1.png"),
+                ),
+                activeIcon: SizedBox(
+                  width: 15.w,
+                  height: 15.h,
+                  child: Image.asset(
+                    "assets/icons/play-circle1.png",
+                    color: AppColor.primaryElement,
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
@@ -65,7 +89,15 @@ class _ApplicationPageState extends State<ApplicationPage> {
                 icon: SizedBox(
                   width: 15.w,
                   height: 15.h,
-                  child: Image.asset("assets/icons/message.png"),
+                  child: Image.asset("assets/icons/message-circle.png"),
+                ),
+                activeIcon: SizedBox(
+                  width: 15.w,
+                  height: 15.h,
+                  child: Image.asset(
+                    "assets/icons/message-circle.png",
+                    color: AppColor.primaryElement,
+                  ),
                 ),
               ),
               BottomNavigationBarItem(
@@ -74,6 +106,14 @@ class _ApplicationPageState extends State<ApplicationPage> {
                   width: 15.w,
                   height: 15.h,
                   child: Image.asset("assets/icons/person.png"),
+                ),
+                activeIcon: SizedBox(
+                  width: 15.w,
+                  height: 15.h,
+                  child: Image.asset(
+                    "assets/icons/person.png",
+                    color: AppColor.primaryElement,
+                  ),
                 ),
               ),
             ],
