@@ -17,11 +17,13 @@ class _ApplicationPageState extends State<ApplicationPage> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
-          body: buildPage(1),
+          body: buildPage(_index),
           bottomNavigationBar: BottomNavigationBar(
             onTap: (value) {
-              _index = value;
-              print(_index);
+              setState(() {
+                _index = value;
+                print(_index);
+              });
             },
             elevation: 0,
             items: [
