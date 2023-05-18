@@ -47,6 +47,7 @@ class RegisterController {
               "Check your email inbox and clink on the link to complete the registration",
         );
         ///[pop()]navigates back to the top most Route.
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pop();
       }
     } on FirebaseAuthException catch (e) {
