@@ -10,6 +10,7 @@ class ApplicationPage extends StatefulWidget {
 }
 
 class _ApplicationPageState extends State<ApplicationPage> {
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +19,10 @@ class _ApplicationPageState extends State<ApplicationPage> {
         child: Scaffold(
           body: buildPage(1),
           bottomNavigationBar: BottomNavigationBar(
+            onTap: (value) {
+              _index = value;
+              print(_index);
+            },
             elevation: 0,
             items: [
               BottomNavigationBarItem(
