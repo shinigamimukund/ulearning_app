@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ulearning_app/pages/application/widgets/application_widget.dart';
 
 class ApplicationPage extends StatefulWidget {
   const ApplicationPage({super.key});
@@ -12,11 +13,9 @@ class _ApplicationPageState extends State<ApplicationPage> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: const SafeArea(
+      child: SafeArea(
         child: Scaffold(
-          body: Center(
-            child: Text("home"),
-          ),
+          body: buildPage(0),
         ),
       ),
     );
