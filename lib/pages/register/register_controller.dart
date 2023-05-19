@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ulearning_app/pages/register/widgets/bloc/register_bloc.dart';
-import 'package:ulearning_app/widgets/flutter_toast.dart';
+import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
 class RegisterController {
   final BuildContext context;
