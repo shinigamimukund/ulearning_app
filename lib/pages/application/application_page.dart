@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
 import 'package:ulearning_app/pages/application/widgets/application_widget.dart';
 
-class ApplicationPage extends StatefulWidget {
-  const ApplicationPage({super.key});
+class Application extends StatefulWidget {
+  const Application({super.key});
 
   @override
-  State<ApplicationPage> createState() => _ApplicationPageState();
+  State<Application> createState() => _ApplicationState();
 }
 
-class _ApplicationPageState extends State<ApplicationPage> {
+class _ApplicationState extends State<Application> {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
               onTap: (value) {
                 setState(() {
                   _index = value;
-                  print(_index);
+                  // print(_index);
                 });
               },
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
+import 'package:ulearning_app/common/routes/pages.dart';
 import 'package:ulearning_app/pages/application/application_page.dart';
 import 'package:ulearning_app/pages/bloc_providers.dart';
 import 'package:ulearning_app/pages/register/register.dart';
@@ -25,7 +26,9 @@ class MyApp extends StatelessWidget {
     ///Dependency injection
     ///should be do'nt at the top level of the tree
     return MultiBlocProvider(
-      providers: AppBlocProviders.allBlocProviders,
+      /// ... adds the allBlockProvider to the existing list
+      providers: [...AppPages.allBlocProviders(context)],
+      
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.white,
             ),
           ),
-          home: const ApplicationPage(),
+          home: const Application(),
           routes: {
             "signIn": (context) => const SignIn(),
             "register": (context) => const Register(),
