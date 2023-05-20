@@ -18,6 +18,7 @@ class PageEntity {
 }
 
 class AppPages {
+  ///routes function of return type list
   static List<PageEntity> routes() {
     return [
       PageEntity(
@@ -51,23 +52,16 @@ class AppPages {
     ];
   }
 
-  static List<PageEntity> routesList = routes();
-
+  ///function return type is of list<dynamic>
+  ///its not a separate nameless List
+  /// this is allBlockProvidersFun function of return type list
   static List<dynamic> allBlocProvidersFun(BuildContext context) {
     List<dynamic> blocProviders = [];
 
-    ///AppPages.routesList is used because list is static and
-    ///---must be accessed using class name
-    for (var blocs in AppPages.routesList) {
+    for (var blocs in AppPages.routes()) {
       if (blocs.bloc != null) blocProviders.add(blocs.bloc);
     }
-    //this is how to print elements in routesList
-    // List<PageEntity> routesList = routes();
-    // routesList.forEach((PageEntity) {
-    //   print('Route: ${PageEntity.route}');
-    //   print('Page: ${PageEntity.page}');
-    //   print('bloc: ${PageEntity.bloc}');
-    // });
+
     print("list is = $blocProviders");
     return blocProviders;
   }
