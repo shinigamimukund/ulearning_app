@@ -27,8 +27,7 @@ class MyApp extends StatelessWidget {
     ///should be do'nt at the top level of the tree
     return MultiBlocProvider(
       /// ... adds the allBlockProvider to the existing list
-      providers: [...AppPages.allBlocProviders(context)],
-      
+      providers: [...AppPages.allBlocProvidersFun(context)],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -46,6 +45,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.white,
             ),
           ),
+          initialRoute: "/",
           home: const Application(),
           routes: {
             "signIn": (context) => const SignIn(),
