@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
-import 'package:ulearning_app/common/routes/pages.dart';
-import 'package:ulearning_app/pages/application/application_page.dart';
-import 'package:ulearning_app/pages/bloc_providers.dart';
-import 'package:ulearning_app/pages/register/register.dart';
-import 'package:ulearning_app/pages/sign_in/sign_in.dart';
+import 'package:ulearning_app/common/routes/routes.dart';
+
 // import 'package:ulearning_app/pages/welcome/welcome.dart';
 
 Future<void> main() async {
@@ -31,9 +28,6 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
-
-          ///this is how you setup `theme` for entire app
-          ///it should we done in [MaterialApp]
           theme: ThemeData(
             appBarTheme: const AppBarTheme(
               elevation: 0.7,
@@ -45,12 +39,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.white,
             ),
           ),
-          initialRoute: "/",
-          home: const Application(),
-          routes: {
-            "signIn": (context) => const SignIn(),
-            "register": (context) => const Register(),
-          },
+          onGenerateRoute: AppPages.generateRouteSettings,
         ),
       ),
     );

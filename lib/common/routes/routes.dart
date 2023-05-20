@@ -1,2 +1,2 @@
-import 'pages.dart';
-import 'names.dart';
+export 'pages.dart';
+export 'names.dart';
