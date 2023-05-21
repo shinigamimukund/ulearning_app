@@ -55,6 +55,8 @@ class SignInController {
 
           var user = firebaseCredentials.user;
           if (user != null) {
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil("/application", (route) => false);
             toastInfo(message: "user exists");
             return;
           } else {

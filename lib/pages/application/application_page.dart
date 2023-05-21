@@ -13,7 +13,7 @@ class Application extends StatefulWidget {
 }
 
 class _ApplicationState extends State<Application> {
-  int _index = 0;
+  final int _index = 0;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ApplicationBloc, ApplicationState>(
@@ -22,7 +22,7 @@ class _ApplicationState extends State<Application> {
         color: Colors.white,
         child: SafeArea(
           child: Scaffold(
-            body: buildPage(_index),
+            body: buildPage(state.index),
             bottomNavigationBar: Container(
               width: 375.w,
               height: 58.h,
@@ -43,12 +43,14 @@ class _ApplicationState extends State<Application> {
                 ],
               ),
               child: BottomNavigationBar(
-                currentIndex: _index,
+                currentIndex: state.index,
                 onTap: (value) {
-                  setState(() {
-                    _index = value;
-                    // print(_index);
-                  });
+                  ///on tap, value is passed to state
+                  context.read<ApplicationBloc>().add(TriggerAppEvent(value));
+                  // setState(() {
+                  //   _index = value;
+                  //   // print(_index);
+                  // });
                 },
 
                 ///selected items don't go up
