@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ulearning_app/common/entities/values/constants.dart';
+import 'package:ulearning_app/global.dart';
 import 'package:ulearning_app/pages/sign_in/bloc/bloc/signin_bloc.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
@@ -53,8 +55,20 @@ class SignInController {
             //
           }
 
+          ///this needs testing
+          ///`to solve`: Logging in as shinigamimukund@gmail.com with empty reCAPTCHA token
+
+          // firebaseCredentials.user!.getIdToken(true);
+
           var user = firebaseCredentials.user;
           if (user != null) {
+            // ignore: use_build_context_synchronously
+            ///stay logged in,using Shared preferences
+            Global.storageService
+                .setString(AppConstants.STORAGE_USER_TOKEN_KEY, '12345');
+
+            ///page change
+            // ignore: use_build_context_synchronously
             Navigator.of(context)
                 .pushNamedAndRemoveUntil("/application", (route) => false);
             toastInfo(message: "user exists");

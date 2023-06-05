@@ -10,6 +10,8 @@ import 'package:ulearning_app/pages/sign_in/sign_in.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:ulearning_app/pages/welcome/welcome.dart';
 
+import '../../global.dart';
+
 class PageEntity {
   String route;
   Widget page;
@@ -73,20 +75,36 @@ class AppPages {
   /// dynamic routing function
   static MaterialPageRoute generateRouteSettings(RouteSettings settings) {
     if (settings.name != null) {
-      ///[settings.name] is the string where we pass in each page
-      ///---eg [Navigator.of(context).pushNamed("/register");]
-      ///---here settings.name is "/register"
-      ///---then its compared with `route` in [routes()] method, which returns list
-      ///---where is list function
       var result = routes().where((element) => element.route == settings.name);
 
       ///return page if the name matches
       if (result.isNotEmpty) {
-        return MaterialPageRoute(builder: (context) => result.first.page);
+        print("first log");
+
+        ///shared preferences
+        bool getDeviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+        if (result.first.route == AppRoutes.INITIAL && getDeviceFirstOpen) {
+          bool isLoggedIn = Global.storageService.getUserTokenKey();
+
+          ///if logged in stay logged in
+          ///shared preferences
+          if (isLoggedIn) {
+            return MaterialPageRoute(
+                builder: (_) => const Application(), settings: settings);
+          }
+
+          ///redirect ot sign in page after returning second time to app
+          return MaterialPageRoute(
+              builder: (_) => const SignIn(), settings: settings);
+        }
+
+        ///route generate
+        return MaterialPageRoute(
+            builder: (_) => result.first.page, settings: settings);
       }
     }
 
     return MaterialPageRoute(
-        builder: (context) => const SignIn(), settings: settings);
+        builder: (_) => const SignIn(), settings: settings);
   }
 }

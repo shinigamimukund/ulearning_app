@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/pages/home/home_page.dart';
 
 import '../../../common/entities/values/colors.dart';
 
 ///dynamic pages
 Widget buildPage(int index) {
   List<Widget> widget = [
-    const Center(
-      child: Text("Home"),
-    ),
+    const HomePage(),
     const Center(
       child: Text("Search"),
     ),

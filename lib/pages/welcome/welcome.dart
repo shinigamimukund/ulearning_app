@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
+import 'package:ulearning_app/common/entities/values/constants.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_bloc.dart';
+
+import '../../global.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -157,6 +160,8 @@ class _WelcomeState extends State<Welcome> {
               ///below code is used to one way jump to another page
               ///you cannot come back to previous page
               ///we use routes to do this
+              Global.storageService
+                  .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("/signIn", (route) => false);
             }
