@@ -79,7 +79,7 @@ class AppPages {
 
       ///return page if the name matches
       if (result.isNotEmpty) {
-        print("first log");
+        //print("first log");
 
         ///shared preferences
         bool getDeviceFirstOpen = Global.storageService.getDeviceFirstOpen();
