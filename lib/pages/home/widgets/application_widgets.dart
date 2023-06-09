@@ -55,3 +55,90 @@ Widget homePageText(String txt,
     ),
   );
 }
+
+Widget searchBox() {
+  return Row(
+    //mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+      Container(
+        width: 280.w,
+        height: 40.h,
+        decoration: BoxDecoration(
+          color: AppColor.primaryBackground,
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: AppColor.primaryFourElementText),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 16.w,
+              height: 16.h,
+              margin: EdgeInsets.only(left: 17.w),
+              child: Image.asset("assets/icons/search.png"),
+            ),
+            SizedBox(
+              width: 240.w,
+              height: 40.h,
+              child: TextField(
+                //onChanged: (value) => funValue!(value),
+
+                ///keyboardType: TextInputType.multiline, was used in video
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  hintText: "Search for course",
+                  contentPadding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                  disabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                    ),
+                  ),
+
+                  ///{@end default border removal}
+
+                  hintStyle: TextStyle(
+                    color: Colors.grey.withOpacity(0.5),
+                  ),
+                ),
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontFamily: "aviner",
+                  fontWeight: FontWeight.normal,
+                  color: AppColor.primaryText,
+                ),
+                autocorrect: false,
+
+                ///to hide pass word text
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        width: 40.w,
+        height: 40.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: AppColor.primaryElement),
+        ),
+        child: Image.asset("assets/icons/options.png"),
+      )
+    ],
+  );
+}

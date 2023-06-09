@@ -26,6 +26,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             homePageText("Home", color: AppColor.primaryThreeElementText),
             homePageText("Ulearn", topVal: 5),
+            SizedBox(height: 20.h,),
+            searchBox(),
           ],
         ),
       ),
