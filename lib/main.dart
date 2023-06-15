@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,6 +23,8 @@ class MyApp extends StatelessWidget {
       /// ... adds the allBlockProvider to the existing list
       providers: [...AppPages.allBlocProvidersFun(context)],
       child: ScreenUtilInit(
+        /// setting default screen size for dynamic screen size
+        designSize: const Size(375, 812),
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(

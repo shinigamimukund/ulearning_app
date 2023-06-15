@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
+import 'package:ulearning_app/pages/home/bloc/bloc/home_page_bloc.dart';
 import 'package:ulearning_app/pages/home/widgets/application_widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,21 +18,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(),
-      body: Container(
-        margin: EdgeInsets.symmetric(
-          vertical: 0,
-          horizontal: 23.w,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            homePageText("Home", color: AppColor.primaryThreeElementText),
-            homePageText("Ulearn", topVal: 5),
-            SizedBox(height: 20.h,),
-            searchBox(),
-          ],
-        ),
-      ),
+      body: BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
+        return Container(
+          margin: EdgeInsets.symmetric(
+            vertical: 0,
+            horizontal: 23.w,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              homePageText("Home", color: AppColor.primaryThreeElementText),
+              homePageText("Ulearn", topVal: 5),
+              searchBox(),
+              slidersView(context,state),
+            ],
+          ),
+        );
+      }),
     );
   }
 }

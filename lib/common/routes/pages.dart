@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ulearning_app/common/routes/names.dart';
 import 'package:ulearning_app/pages/application/application_page.dart';
 import 'package:ulearning_app/pages/application/bloc/application_bloc.dart';
+import 'package:ulearning_app/pages/home/bloc/bloc/home_page_bloc.dart';
+import 'package:ulearning_app/pages/home/home_page.dart';
 import 'package:ulearning_app/pages/register/register.dart';
 import 'package:ulearning_app/pages/register/widgets/bloc/register_bloc.dart';
 import 'package:ulearning_app/pages/sign_in/bloc/bloc/signin_bloc.dart';
@@ -50,6 +52,13 @@ class AppPages {
         page: const Application(),
         bloc: BlocProvider(
           create: (context) => ApplicationBloc(),
+        ),
+      ),
+      PageEntity(
+        route: AppRoutes.HOME_PAGE,
+        page: const HomePage(),
+        bloc: BlocProvider(
+          create: (context) => HomePageBloc(),
         ),
       ),
     ];
