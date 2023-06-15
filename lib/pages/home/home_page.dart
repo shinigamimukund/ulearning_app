@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
               homePageText("Ulearn", topVal: 5),
               searchBox(),
               slidersView(context,state),
+              mainView(),
             ],
           ),
         );

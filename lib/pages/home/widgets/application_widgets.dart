@@ -217,3 +217,81 @@ Widget dotIndicator(BuildContext context, HomePageState state) {
     ),
   );
 }
+
+Widget mainView() {
+  return Container(
+    width: 325.w,
+    margin: EdgeInsets.only(top: 15.h),
+    child: Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _reusableSubTitleText(
+              "Choose your course",
+            ),
+            GestureDetector(
+              child: _reusableSubTitleText(
+                "See all",
+                color: AppColor.primaryThreeElementText,
+                fontSize: 10,
+              ),
+            ),
+          ],
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 20.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              _reusableMenuText("All"),
+              _reusableMenuText(
+                "Popular",
+                bgColor: AppColor.primaryBackground,
+                textColor: AppColor.primaryThreeElementText,
+              ),
+              _reusableMenuText(
+                "Newest",
+                bgColor: AppColor.primaryBackground,
+                textColor: AppColor.primaryThreeElementText,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget _reusableSubTitleText(String text,
+    {Color color = AppColor.primaryText,
+    double fontSize = 16,
+    FontWeight fontWeight = FontWeight.bold}) {
+  return Container(
+    child: Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontWeight: fontWeight,
+        fontSize: fontSize.sp,
+      ),
+    ),
+  );
+}
+
+Widget _reusableMenuText(String text,
+    {Color bgColor = AppColor.primaryElement,
+    Color textColor = AppColor.primaryElementText}) {
+  return Container(
+    margin: EdgeInsets.only(right: 20.w),
+    padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+    decoration: BoxDecoration(
+      color: bgColor,
+      borderRadius: BorderRadius.circular(7.w),
+      border: Border.all(color: bgColor),
+    ),
+    child: _reusableSubTitleText(text,
+        color: textColor, fontWeight: FontWeight.normal, fontSize: 11),
+  );
+}
