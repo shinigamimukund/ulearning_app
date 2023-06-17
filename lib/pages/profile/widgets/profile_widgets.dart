@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
+import 'package:ulearning_app/common/routes/routes.dart';
 
 AppBar buildProfileAppBar() {
   return AppBar(
@@ -62,7 +63,7 @@ var imageInfo = <String, String>{
   "Love": "heart(1).png",
   "Reminder": "cube.png",
 };
-Widget buildListView() {
+Widget buildListView(BuildContext context) {
   return Column(
     children: [
       ///... is used to combine list
@@ -70,6 +71,7 @@ Widget buildListView() {
       ...List.generate(
         imageInfo.length,
         (index) => GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed(AppRoutes.SETTING_PAGE),
           child: Container(
             padding: EdgeInsets.only(
               top: 20.h,

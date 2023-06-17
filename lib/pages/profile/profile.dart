@@ -24,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Column(
             children: [
               profileIconAndEditButton(),
-              buildListView(),
+              buildListView(context),
             ],
           ),
         ),
