@@ -38,4 +38,11 @@ class StorageService {
   }
 
   ///@end:- signin page.......
+
+  ///@start:- logout in settings page........
+  Future<bool> remove(String key) {
+    return _preferences.remove(key);
+  }
+
+  ///@end:- logout in settings page.......
 }

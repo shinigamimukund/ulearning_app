@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/home/bloc/bloc/home_page_bloc.dart';
 
 import '../../../common/entities/values/colors.dart';
+import '../../../common/widgets/base_text_widgets.dart';
 
 AppBar buildAppBar() {
   return AppBar(
@@ -228,11 +229,11 @@ Widget mainView() {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _reusableSubTitleText(
+            reusableText(
               "Choose your course",
             ),
             GestureDetector(
-              child: _reusableSubTitleText(
+              child: reusableText(
                 "See all",
                 color: AppColor.primaryThreeElementText,
                 fontSize: 10,
@@ -264,22 +265,6 @@ Widget mainView() {
   );
 }
 
-Widget _reusableSubTitleText(String text,
-    {Color color = AppColor.primaryText,
-    double fontSize = 16,
-    FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize.sp,
-      ),
-    ),
-  );
-}
-
 Widget _reusableMenuText(String text,
     {Color bgColor = AppColor.primaryElement,
     Color textColor = AppColor.primaryElementText}) {
@@ -291,7 +276,7 @@ Widget _reusableMenuText(String text,
       borderRadius: BorderRadius.circular(7.w),
       border: Border.all(color: bgColor),
     ),
-    child: _reusableSubTitleText(text,
+    child: reusableText(text,
         color: textColor, fontWeight: FontWeight.normal, fontSize: 11),
   );
 }

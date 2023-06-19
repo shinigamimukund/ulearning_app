@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/entities/values/colors.dart';
 import 'package:ulearning_app/common/routes/routes.dart';
 
+import '../../../common/widgets/base_text_widgets.dart';
+
 AppBar buildProfileAppBar() {
   return AppBar(
     elevation: 0.2,
@@ -15,14 +17,7 @@ AppBar buildProfileAppBar() {
             height: 12.h,
             child: Image.asset("assets/icons/menu.png"),
           ),
-          Text(
-            "Profile",
-            style: TextStyle(
-              color: AppColor.primaryText,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp,
-            ),
-          ),
+          reusableText("Profile"),
           SizedBox(
             width: 24.w,
             height: 24.h,
@@ -91,13 +86,8 @@ Widget buildListView(BuildContext context) {
                 SizedBox(
                   width: 15.w,
                 ),
-                Text(
+                reusableText(
                   imageInfo.keys.elementAt(index),
-                  style: TextStyle(
-                    color: AppColor.primaryText,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.sp,
-                  ),
                 ),
               ],
             ),
